@@ -7,14 +7,15 @@ class ResponseManager:
         self.user_query = user_query
         self.response = call_api(self.user_query)[0]
         self.word = self.response["word"]
-        self.phonetics = self.response["phonetics"] # TODO - parse out
+        self.phonetics = self.response["phonetics"]  # TODO - parse out
         # self.origin = self.response["origin"]
-        self.meanings = self.response["meanings"] # TODO - display all meanings
+        # TODO - display all meanings
+        self.meanings = self.response["meanings"]
         self.part_of_speech = self.meanings[0]["partOfSpeech"]
-        self.definition = self.meanings[0]["definitions"][0]["definition"] # TODO - display all definitions
+        # TODO - display all definitions
+        self.definition = self.meanings[0]["definitions"][0]["definition"]
         # self.example = self.meanings[0]["definitions"][0]["example"] # TODO - display all examples
         self.source = self.response["sourceUrls"][0]
-
 
     def get_query(self):
         query_response = {
@@ -28,7 +29,3 @@ class ResponseManager:
             "Source": self.source,
         }
         return query_response
-
-
-        
-        

@@ -10,9 +10,6 @@ result = search.get_query()
 print(result["Definition"])
 
 
-
-
-
 # @app.route("/")
 # def home():
 #     return "<p>Hello, World!</p>"
